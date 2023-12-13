@@ -1,0 +1,36 @@
+.session.session--sign_in, .session.session--sign_up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.session input:not([type="submit"]) {
+    height: 3rem;
+    border-radius: 10px;
+    border-color: antiquewhite;
+    border-width: 1px;
+}
+
+.session input[type="submit"] {
+    border-radius: 10px;
+    padding: 10px;
+    border-color: skyblue;
+    cursor: pointer;
+}
+
+.session input[type="submit"]:hover {
+    background-color: skyblue;
+    color: black;
+}
+
+.session form {
+    display: flex;
+    flex-direction: column;
+}
+
+.session .form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    min-width: 300px;
+}

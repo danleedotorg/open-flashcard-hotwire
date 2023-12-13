@@ -1,0 +1,19 @@
+<div class="session session--sign_in">
+  <h1>Sign In</h1>
+  <%= form_for @user, url: session_sign_in_path do |f| %>
+    <div class="form-control">
+      <%= f.label :username, 'Username' %>
+      <%= f.text_field :username %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :password, 'Password' %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="form-control">
+      <%= f.submit "Submit" %>
+    </div>
+
+  <% end %>
+</div>

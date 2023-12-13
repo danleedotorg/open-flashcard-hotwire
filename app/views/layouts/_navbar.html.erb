@@ -3,11 +3,17 @@
     <li class="layouts-navbar home-link">
       <a href="<%= root_path %>">Open Flashcard</a>
     </li>
-    <li class="layouts-navbar session-links">
-      <a href="<%= session_signup_path %>">Signup</a>
-    </li>
-    <li class="layouts-navbar session-links">
-      <a href="<%= session_login_path %>">Login</a>
-    </li>
+    <% if current_user %>
+      <li class="layouts-navbar session-links">
+        <a href="<%= session_destroy_path %>">Logout</a>
+      </li>
+    <% else %>
+      <li class="layouts-navbar session-links">
+        <a href="<%= session_sign_up_path %>">Sign Up</a>
+      </li>
+      <li class="layouts-navbar session-links">
+        <a href="<%= session_sign_in_path %>">Sign In</a>
+      </li>
+    <% end %>
   </ul>
 </nav>

@@ -12,6 +12,12 @@
 
   <body>
     <%= render 'layouts/navbar' %>
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= type %>
+        <%= msg.is_a?(Array) ? sanitize(msg.join('<br />')) : msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
