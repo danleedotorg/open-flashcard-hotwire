@@ -62,3 +62,6 @@ end
 
 
 gem "rspec-rails", "~> 6.1"
+
+# TODO: point to normal git repo once fix is merged in
+gem "sorcery", git: 'https://github.com/Spone/sorcery', :branch => 'patch-2'
