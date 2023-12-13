@@ -34,14 +34,14 @@ body {
     margin: 0 20px;
 }
 
-button, input[type="submit"] {
+.button {
+    border: 1px solid skyblue;
     border-radius: 10px;
     padding: 10px;
-    border-color: skyblue;
     cursor: pointer;
 }
 
-button:hover, input[type="submit"]:hover {
+.button:hover {
     background-color: skyblue;
     color: black;
 }

@@ -1,22 +1,22 @@
 <nav class="layouts-navbar">
   <ul>
-    <li class="layouts-navbar home-link">
+    <li class="home-link">
       <a href="<%= root_path %>">Open Flashcard</a>
     </li>
 
-    <li class="layouts-navbar home-link">
+    <li class="home-link">
       <a href="<%= subjects_path %>">Subjects</a>
     </li>
     <% if current_user %>
-      <li class="layouts-navbar session-links">
-        <a href="<%= session_destroy_path %>">Logout</a>
+      <li >
+        <a class="button" href="<%= session_destroy_path %>">Logout</a>
       </li>
     <% else %>
-      <li class="layouts-navbar session-links">
-        <a href="<%= session_sign_up_path %>">Sign Up</a>
+      <li >
+        <a class="button" href="<%= session_sign_up_path %>">Sign Up</a>
       </li>
-      <li class="layouts-navbar session-links">
-        <a href="<%= session_sign_in_path %>">Sign In</a>
+      <li >
+        <a class="button sign_in_button" href="<%= session_sign_in_path %>">Sign In</a>
       </li>
     <% end %>
   </ul>

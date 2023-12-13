@@ -1,6 +1,6 @@
 .layouts-navbar {
     height: 10vh;
-
+    padding-top: 10px;
 }
 
 .layouts-navbar li {
@@ -21,15 +21,6 @@
 }
 
 
-.layouts-navbar .session-links > * {
-    text-align: right;
-    margin-left: 1rem;
-    border: 1px solid skyblue;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.layouts-navbar .session-links > *:hover {
-    background-color: skyblue;
-    color: black;
+.layouts-navbar .sign_in_button{
+   margin-left: 15px;
 }
