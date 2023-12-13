@@ -11,18 +11,6 @@
     border-width: 1px;
 }
 
-.session input[type="submit"] {
-    border-radius: 10px;
-    padding: 10px;
-    border-color: skyblue;
-    cursor: pointer;
-}
-
-.session input[type="submit"]:hover {
-    background-color: skyblue;
-    color: black;
-}
-
 .session form {
     display: flex;
     flex-direction: column;
