@@ -1,4 +1,6 @@
 class SessionController < ApplicationController
+  before_action :require_login, only: [:destroy]
+
   def sign_up
     @user = User.new
   end
@@ -15,7 +17,11 @@ class SessionController < ApplicationController
   end
 
   def sign_in
-    @user = User.new
+    if current_user
+      redirect_to root_path
+    else
+      @user = User.new
+    end
   end
 
   def create_session
