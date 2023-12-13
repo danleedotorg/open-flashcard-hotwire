@@ -5,11 +5,11 @@ class Subject < ApplicationRecord
   has_many :multiple_choice_questions
 
   def questions
-    single_choice_questions + multiple_choice_questions.map { |question| question.merge(answers: question.answers)}
+    single_choice_questions + multiple_choice_questions.map { |question| question.merge(answers: question.answers) }
   end
 
   def questions_as_hashes
-    single_choice_questions.map(&:attributes) + multiple_choice_questions.map { |question| question.attributes.merge(answers: question.answers)}
+    single_choice_questions.map(&:attributes) + multiple_choice_questions.map { |question| question.attributes.merge(answers: question.answers) }
   end
 
   def self.find_with_all_questions(subject_id)

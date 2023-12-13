@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>OpenFlashcardHotwire</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>OpenFlashcardHotwire</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
 
-  <body>
-    <%= render 'layouts/navbar' %>
-    <% flash.each do |type, msg| %>
-      <div>
-        <%= type %>
-        <%= msg.is_a?(Array) ? sanitize(msg.join('<br />')) : msg %>
-      </div>
-    <% end %>
-    <%= yield %>
-  </body>
+<body>
+<%= render 'layouts/navbar' %>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= type %>
+    <%= msg.is_a?(Array) ? sanitize(msg.join('<br />')) : msg %>
+  </div>
+<% end %>
+<%= yield %>
+</body>
 </html>
