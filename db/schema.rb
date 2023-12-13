@@ -10,9 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_13_000508) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_29_052738) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "multiple_choice_answers", force: :cascade do |t|
+    t.text "answer", null: false
+    t.text "explanation"
+    t.boolean "correct", null: false
+    t.bigint "multiple_choice_question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["multiple_choice_question_id"], name: "index_multiple_choice_answers_on_multiple_choice_question_id"
+  end
+
+  create_table "multiple_choice_questions", force: :cascade do |t|
+    t.text "prompt", null: false
+    t.bigint "subject_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_multiple_choice_questions_on_subject_id"
+  end
+
+  create_table "single_choice_questions", force: :cascade do |t|
+    t.text "prompt", null: false
+    t.text "answer", null: false
+    t.bigint "subject_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_single_choice_questions_on_subject_id"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.text "name", null: false
+    t.bigint "creator_id", null: false
+    t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_subjects_on_creator_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
@@ -23,4 +59,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_13_000508) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "multiple_choice_answers", "multiple_choice_questions"
+  add_foreign_key "multiple_choice_questions", "subjects"
+  add_foreign_key "single_choice_questions", "subjects"
+  add_foreign_key "subjects", "users", column: "creator_id"
 end
