@@ -1,0 +1,26 @@
+.subjects .subjects--subject {
+    border: 1px solid skyblue;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow-y: scroll;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.subjects .subjects--subject::-webkit-scrollbar {
+    display: none;
+}
+
+.subjects .subjects--subject .text-content {
+    text-align: left;
+    display: inline-block;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}

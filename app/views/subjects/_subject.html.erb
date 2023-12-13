@@ -1,0 +1,13 @@
+<div class="subjects subjects--subject">
+    <div class="text-content">
+
+      <h2>
+        <%= subject.name %>
+      </h2>
+      <h3 style="overflow-wrap: break-word;"><%= subject.description %></h3>
+      <p>
+        Made By: <%= subject.creator.username %>
+      </p>
+      <p> Last Updated: <%= time_ago_in_words subject.updated_at %></p>
+</div>
+  </div>

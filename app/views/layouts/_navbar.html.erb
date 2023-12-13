@@ -3,6 +3,10 @@
     <li class="layouts-navbar home-link">
       <a href="<%= root_path %>">Open Flashcard</a>
     </li>
+
+    <li class="layouts-navbar home-link">
+      <a href="<%= subjects_path %>">Subjects</a>
+    </li>
     <% if current_user %>
       <li class="layouts-navbar session-links">
         <a href="<%= session_destroy_path %>">Logout</a>
